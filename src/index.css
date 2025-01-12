@@ -1,0 +1,64 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Orange: hsl(25, 97%, 53%);
+    --White: hsl(0, 0%, 100%);
+    --Light-Grey: hsl(217, 12%, 63%);
+    --Dark-Blue: hsl(213, 19%, 18%);
+    --Very-Dark-Blue: hsl(216, 12%, 8%);
+    font-size: 10px;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Overpass', serif;
+    font-style: normal;
+    /* font-weight: 400 700;*/ 
+    background-color: var(--Very-Dark-Blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-component {
+    background-color: var(--Dark-Blue);
+    max-width: 100%;
+    border-radius: 18px;
+    max-height: 100%;
+    width: 450px;
+}
+
+.header {
+    margin: 1.6rem;
+    max-width: 100%;
+    padding: 1rem;
+}
+
+.header .header-image {
+    margin: 1.6rem auto 2rem 0;
+    border-radius: 50%;
+    background-color: hsl(216, 4%, 26%);
+    padding: 1rem;
+}
+
+.header .header-title {
+    color: var(--White);
+    font-size: 2.8rem;
+    max-width: 100%;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    color: var(--White);
+}
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+}

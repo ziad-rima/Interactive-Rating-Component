@@ -52,7 +52,7 @@ const App = () => {
 }
 export default App
 ```
-- I'm thinking of creating a separate component for `main` as that would give me the opportunity to divide between the footer and the main content.
+- I'm thinking of creating a separate component for `main` as that would give me the opportunity to divide the footer and the main content.
 
 This is how I coded the `Header.jsx` component:
 ```jsx

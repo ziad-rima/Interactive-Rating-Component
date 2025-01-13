@@ -32,11 +32,20 @@ body {
     max-width: 100%;
     border-radius: 18px;
     max-height: 100%;
-    width: 450px;
+    width: 400px;
+}
+
+.thankyou-component {
+    display: none;
+    background-color: var(--Dark-Blue);
+    max-width: 100%;
+    border-radius: 18px;
+    max-height: 100%;
+    width: 400px;
 }
 
 .header {
-    margin: 1.6rem;
+    margin: 1.6rem auto 0 1.6rem;
     max-width: 100%;
     padding: 1rem;
 }
@@ -52,6 +61,87 @@ body {
     color: var(--White);
     font-size: 2.8rem;
     max-width: 100%;
+}
+
+.text-container {
+    margin: 0 auto 1.2rem 2.8rem;
+    max-width: 100%;
+    width: 100%;
+}
+
+.text-container .text-content {
+    font-size: 1.5rem;
+    color: var(--Light-Grey);
+    width: 90%;
+}
+
+.ratings-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.4rem;
+    margin-bottom: .5rem;
+}
+
+.ratings-component .rating-item:nth-child(1) {
+    border-radius: 50%;
+    padding: 1.1rem 1.8rem;
+}
+
+.ratings-component .rating-item {
+    background-color: hsl(223, 11%, 25%);
+    padding: 1.1rem 1.6rem;
+    border-radius: 50%;
+    color: var(--Light-Grey);
+    cursor: pointer;
+    margin: 1.2rem;
+    font-size: 1.6rem;
+    text-align: center;
+    transition: all .25s ease-in-out;
+}
+
+.ratings-component .rating-item:hover {
+    background-color: var(--White);
+    color: var(--Very-Dark-Blue);
+    -webkit-box-shadow: 1px 10px 28px 6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 10px 28px 6px rgba(0,0,0,0.75);
+    box-shadow: 1px 10px 28px 6px rgba(0,0,0,0.75);
+}
+
+.ratings-component .rating-item.selected {
+    background-color: var(--Orange);
+    color: var(--Very-Dark-Blue);
+}
+
+.submit-button-container {
+    margin: .4rem auto 1.6rem .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2rem 1.8rem;
+    max-width: 100%;
+}
+
+.submit-button-container .submit-button {
+    padding: 1.2rem 1.8rem;
+    width: 90%;
+    border-radius: 20px;
+    border: 1px solid var(--Dark-Blue);
+    cursor: pointer;
+    font-weight: 550;
+    letter-spacing: 1.5px;
+    background-color: var(--Very-Dark-Blue);
+    color: var(--Light-Grey);
+    margin-bottom: 1.2rem;
+    transition: all .5s ease-in-out;
+}
+
+.submit-button-container .submit-button:hover {
+    background-color: var(--Orange);
+    color: var(--Very-Dark-Blue);
+    -webkit-box-shadow: 1px 10px 28px 6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 10px 28px 6px rgba(0,0,0,0.75);
+    box-shadow: 1px 10px 28px 6px rgba(0,0,0,0.75);
 }
 
 .attribution { 

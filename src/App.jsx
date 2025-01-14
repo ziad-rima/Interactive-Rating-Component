@@ -4,17 +4,21 @@ import Content from "./components/Content"
 import Ratings from "./components/Ratings"
 import SubmitButton from "./components/SubmitButton"
 import SecondPage from "./components/SecondPage"
+import { useState } from "react"
 const App = () => {
+  
+  const [selectedRating, setSelectedRating] = useState(null);
+
   return (
     <>
       <main className="main-component">
         <Header />
         <Content />
-        <Ratings />
+        <Ratings selectedRating={selectedRating} setSelectedRating={setSelectedRating}/>
         <SubmitButton />
       </main>
       <div className="thankyou-component">
-        <SecondPage />
+        {selectedRating && <SecondPage selectedRating={selectedRating}/>}
       </div>
       <Footer />
     </>

@@ -1,8 +1,10 @@
 import Selection from "./Selection"
-const SecondPage = () => {
+import Appreciation from "./Appreciation"
+const SecondPage = ({selectedRating}) => {
   return (
     <div className="second-page">
-      <Selection />
+      <Selection selectedRating={selectedRating}/>
+      <Appreciation />
     </div>
   )
 }

@@ -1,12 +1,9 @@
 import Rating from "./Rating"
 import { useState } from "react"
-const Ratings = () => {
-    const [selectedRating, setSelectedRating] = useState(null);
-    
+const Ratings = ({ selectedRating, setSelectedRating }) => {
     const handleRatingClick = (rating) => {
         setSelectedRating(rating)
     }
-
   return (
     <div className="ratings-component">
         {[1,2,3,4,5].map((rating) => (

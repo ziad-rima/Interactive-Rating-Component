@@ -1,5 +1,4 @@
 import Rating from "./Rating"
-import { useState } from "react"
 const Ratings = ({ selectedRating, setSelectedRating }) => {
     const handleRatingClick = (rating) => {
         setSelectedRating(rating)

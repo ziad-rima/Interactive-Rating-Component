@@ -19,7 +19,6 @@ body {
     min-height: 100vh;
     font-family: 'Overpass', serif;
     font-style: normal;
-    /* font-weight: 400 700;*/ 
     background-color: var(--Very-Dark-Blue);
     display: flex;
     flex-direction: column;
@@ -41,7 +40,6 @@ body {
     border-radius: 18px;
     max-height: 100%;
     width: 400px;
-    display: none;
 }
 
 .header {
@@ -64,15 +62,14 @@ body {
 }
 
 .text-container {
-    margin: 0 auto 1.2rem 2.8rem;
+    margin: 0 0 1.2rem 2.8rem;
     max-width: 100%;
-    width: 100%;
 }
 
 .text-container .text-content {
     font-size: 1.5rem;
     color: var(--Light-Grey);
-    width: 90%;
+    width: 100%;
 }
 
 .ratings-component {
@@ -194,9 +191,42 @@ body {
     color: var(--White);
     position: absolute;
     bottom: 0;
-    margin-left: 4rem;
+    right: 30%;
+    left: 30%;
     margin-bottom: 1.2rem;
 }
 .attribution a {
     color: var(--Orange); 
+}
+
+@media (max-width: 420px) {
+    .main-component {
+       width: 350px;
+       align-self: center;
+    }
+
+    .attribution {
+        right: 20%;
+        left: 20%;
+    }
+
+    .submit-button-container .submit-button {
+        background-color: var(--Orange);
+        color: var(--Very-Dark-Blue);
+    }
+
+    .thankyou-component {
+        width: 350px;
+    }
+}
+
+@media (min-width: 720px) {
+    .text-container .text-content {
+        width: 95%;
+    }
+
+    .attribution {
+        right: 20%;
+        left: 20%;
+    }
 }

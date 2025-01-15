@@ -1,7 +1,7 @@
-const SubmitButton = () => {
+const SubmitButton = ({onSubmit}) => {
   return (
     <div className="submit-button-container">
-      <button type="submit" className="submit-button" id="submit-button">SUBMIT</button>
+      <button onClick={onSubmit} className="submit-button" id="submit-button">SUBMIT</button>
     </div>
   )
 }

@@ -136,11 +136,11 @@ const handleRatingClick = (rating) => {
 ```jsx
 {[1,2,3,4,5].map((rating) => (
     <Rating 
-        key={rating} 
-        isSelected={selectedRating === rating}
-        onClick= {() => handleRatingClick(rating)}
+      key={rating} 
+      isSelected={selectedRating === rating}
+      onClick= {() => handleRatingClick(rating)}
     >
-        <p className="rating">{rating}</p> 
+      <p className="rating">{rating}</p> 
     </Rating>
 ))}
 ``` 
@@ -165,6 +165,129 @@ I used a ternary operation to set the second class name for the rating item (whi
 }
 ```
 
+I faced difficulties when trying to pass the same `selectedRating` to another component, which is `Selection.jsx` component, I've done some research on how to do it, one of the solutions was to move the `selectedRating` to a parent component (i.e., the `App.jsx` component). Then, pass it as a prop to both the `Ratings.jsx` component and the `SecondPage.jsx` component which will in turn pass it to `Selection.jsx`:
+
+- I modified `App.jsx`:
+```jsx
+const [selectedRating, setSelectedRating] = useState(null);
+  return (
+    <>
+      <main className="main-component">
+        <Header />
+        <Content />
+        <Ratings selectedRating={selectedRating} setSelectedRating={setSelectedRating}/>
+        <SubmitButton />
+      </main>
+      <div className="thankyou-component">
+        {selectedRating && <SecondPage selectedRating={selectedRating}/>}
+      </div>
+      <Footer />
+    </> 
+  )
+```
+- `Ratings.jsx`:
+```jsx
+const Ratings = ({ selectedRating, setSelectedRating }) => {
+  const handleRatingClick = (rating) => {
+      setSelectedRating(rating)
+  }
+  return (
+    <div className="ratings-component">
+      {[1,2,3,4,5].map((rating) => (
+          <Rating 
+            key={rating} 
+            isSelected={selectedRating === rating}
+            onClick= {() => handleRatingClick(rating)}
+          >
+            <p className="rating">{rating}</p>       
+          </Rating>
+      ))}
+    </div>
+  );
+};
+```
+- `SecondPage.jsx`:
+```jsx
+import Selection from "./Selection"
+import Appreciation from "./Appreciation"
+const SecondPage = ({selectedRating}) => {
+  return (
+    <div className="second-page">
+      <Selection selectedRating={selectedRating}/>
+      <Appreciation />
+    </div>
+  )
+}
+export default SecondPage
+```
+- `Selection.jsx`:
+```jsx
+const Selection = ({selectedRating}) => {
+  return (
+    <div className="selection-content">
+      <img className="selection-image" src={thankYou} alt="Thank you image." />
+      <p className="selection-text">You selected {selectedRating} out of 5</p>
+    </div>
+  )
+}
+```
+
+I handled the part where the user submits their rating this way:
+- `App.jsx`:
+```jsx
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+import Content from "./components/Content"
+import Ratings from "./components/Ratings"
+import SubmitButton from "./components/SubmitButton"
+import SecondPage from "./components/SecondPage"
+import { useState } from "react"
+const App = () => {
+  
+  const [selectedRating, setSelectedRating] = useState(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmitButton = () => {
+    if (selectedRating) {
+      setIsSubmitted(true)
+    } else {
+      alert("Please select a rating before submitting.")
+    }
+  };
+
+  return (
+    <>
+      {!isSubmitted ? (
+        <main className="main-component">
+          <Header />
+          <Content />
+          <Ratings selectedRating={selectedRating} setSelectedRating={setSelectedRating}/>
+          <SubmitButton onSubmit={handleSubmitButton}/>
+        </main>
+      ) : (
+        <div className="thankyou-component">
+          <SecondPage selectedRating={selectedRating}/>
+        </div>)
+      } 
+      <Footer />
+    </>
+    
+  )
+}
+export default App
+```
+- `SubmitButton.jsx`:
+```jsx
+const SubmitButton = ({onSubmit}) => {
+  return (
+    <div className="submit-button-container">
+      <button onClick={onSubmit} className="submit-button" id="submit-button">SUBMIT</button>
+    </div>
+  )
+}
+export default SubmitButton
+```
+
 ### Built with
 
 - HTML (using JSX)
@@ -173,6 +296,8 @@ I used a ternary operation to set the second class name for the rating item (whi
 - [React](https://reactjs.org/) - JS library
 
 ### What I learned
+
+I gained a deeper understanding of using props to manage website functionality. Specifically, I learned how to pass a state variable and its corresponding updater function from a parent component to multiple child components.
 
 ### Continued development
 

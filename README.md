@@ -28,10 +28,10 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./public/design/Screenshot.png)
 
 ### Links
-[Solution URL]()
+[Solution URL](https://www.frontendmentor.io/solutions/react-interactive-responsive-component-1owsEacuNm)
 [Live Site URL](https://interactiveratingfrontend.netlify.app/)
 
 ## My process

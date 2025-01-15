@@ -31,7 +31,8 @@ Users should be able to:
 ![](./screenshot.jpg)
 
 ### Links
-
+[Solution URL]()
+[Live Site URL](https://interactiveratingfrontend.netlify.app/)
 
 ## My process
 
@@ -301,6 +302,7 @@ I gained a deeper understanding of using props to manage website functionality. 
 
 ### Continued development
 
+I'll be focusing on building more React projects in the future as I'm already handling the basics efficiently.
 
 ### Useful resources
 

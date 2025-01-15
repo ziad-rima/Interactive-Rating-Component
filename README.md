@@ -31,8 +31,8 @@ Users should be able to:
 ![](./public/design/Screenshot.png)
 
 ### Links
-[Solution URL](https://www.frontendmentor.io/solutions/react-interactive-responsive-component-1owsEacuNm)
-[Live Site URL](https://interactiveratingfrontend.netlify.app/)
+- [Solution URL](https://www.frontendmentor.io/solutions/react-interactive-responsive-component-1owsEacuNm)
+- [Live Site URL](https://interactiveratingfrontend.netlify.app/)
 
 ## My process
 
